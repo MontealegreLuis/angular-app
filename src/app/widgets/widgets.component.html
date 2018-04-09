@@ -1,4 +1,54 @@
-<h1>widgets ya'll!</h1>
-<input name="color" [(ngModel)]="color">
-<h3 [style.color]="color">{{color}}</h3>
-<button type="button" (click)="echo(color)">Log the current color</button>
+<div class="container">
+  <!-- WIDGETS LIST -->
+  <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Widgets</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item
+            *ngFor="let widget of widgets"
+            (click)="selected(widget)"
+          >
+            <h3 mat-line>{{widget.name}}</h3>
+            <button mat-icon-button>
+              <mat-icon>close</mat-icon>
+            </button>
+            <p mat-line>
+              {{widget.description}}
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+  <!-- WIDGET DETAILS -->
+  <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>
+            <span *ngIf="selectedWidget; else prompt">
+              Editing {{selectedWidget.name}}
+            </span>
+            <ng-template #prompt>Select a widget</ng-template>
+          </h1>
+        </mat-card-title>
+      </mat-card-header>
+      <form>
+        <mat-card-content>
+          <pre>{{selectedWidget | json}}</pre>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="submit" mat-button>Save</button>
+          <button type="button" mat-button (click)="selected(null)">Cancel</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>
