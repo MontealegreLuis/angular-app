@@ -8,6 +8,7 @@ import {WidgetsComponent} from './widgets/widgets.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {AppMaterialModule} from './app-material-module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {AppMaterialModule} from './app-material-module';
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     AppMaterialModule
   ],
