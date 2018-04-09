@@ -1,1 +1,4 @@
 <h1>widgets ya'll!</h1>
+<input name="color" [(ngModel)]="color">
+<h3 [style.color]="color">{{color}}</h3>
+<button type="button" (click)="echo(color)">Log the current color</button>

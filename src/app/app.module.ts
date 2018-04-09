@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {HelloWorldComponent} from './hello-world/hello-world.component';
 import {WidgetsComponent} from './widgets/widgets.component';
 import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {AppRoutingModule} from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
