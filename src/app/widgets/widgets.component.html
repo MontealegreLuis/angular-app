@@ -41,13 +41,31 @@
           </h1>
         </mat-card-title>
       </mat-card-header>
-      <form>
+      <form novalidate #widgetForm="ngForm" (submit)="save(selectedWidget)">
         <mat-card-content>
-          <pre>{{selectedWidget | json}}</pre>
+          <mat-input-container class="full-width">
+            <input
+              [(ngModel)]="selectedWidget.name"
+              matInput
+              name="name"
+              id="name"
+              required
+              placeholder="Enter a name">
+          </mat-input-container>
+          <mat-input-container class="full-width">
+            <input
+              [(ngModel)]="selectedWidget.description"
+              matInput
+              name="description"
+              id="description"
+              required
+              placeholder="Enter a description"
+            >
+          </mat-input-container>
         </mat-card-content>
         <mat-card-actions>
-          <button type="submit" mat-button>Save</button>
-          <button type="button" mat-button (click)="selected(null)">Cancel</button>
+          <button type="submit" [disabled]="!widgetForm.valid" mat-button>Save</button>
+          <button type="button" mat-button (click)="reset()">Cancel</button>
         </mat-card-actions>
       </form>
     </mat-card>

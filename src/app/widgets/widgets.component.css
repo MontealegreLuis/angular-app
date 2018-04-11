@@ -2,3 +2,12 @@
   cursor: pointer;
   background-color: whitesmoke;
 }
+
+.full-width,
+.full-width input {
+  width: 100%;
+}
+
+input.ng-touched.ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
