@@ -11,6 +11,7 @@ import {AppMaterialModule} from './app-material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WidgetsListComponent} from './widgets/widgets-list/widgets-list.component';
 import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details.component';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

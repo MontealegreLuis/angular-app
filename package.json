@@ -4,11 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"npm run server\" \"ng serve\"",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "json-server server/api/db.json --watch"
   },
   "private": true,
   "dependencies": {
@@ -23,8 +24,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "concurrently": "^3.5.1",
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
+    "json-server": "^0.12.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
