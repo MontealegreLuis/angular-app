@@ -1,74 +1,19 @@
 <div class="container">
   <div class="row">
-  <!-- WIDGETS LIST -->
-  <div class="col s6">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h1>Widgets</h1>
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item
-            *ngFor="let widget of widgets"
-            (click)="selected(widget)"
-          >
-            <h3 mat-line>{{widget.name}}</h3>
-            <button mat-icon-button>
-              <mat-icon>close</mat-icon>
-            </button>
-            <p mat-line>
-              {{widget.description}}
-            </p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </div>
+    <app-widgets-list
+      [widgets]="widgets"
+      (selected)="selectWidget($event)"
+      (deleted)="deleteWidget($event)"
+      class="col s6"
+    >
+    </app-widgets-list>
 
-
-  <!-- WIDGET DETAILS -->
-  <div class="col s6">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
-          <h1>
-            <span *ngIf="selectedWidget; else prompt">
-              Editing {{selectedWidget.name}}
-            </span>
-            <ng-template #prompt>Select a widget</ng-template>
-          </h1>
-        </mat-card-title>
-      </mat-card-header>
-      <form novalidate #widgetForm="ngForm" (submit)="save(selectedWidget)">
-        <mat-card-content>
-          <mat-input-container class="full-width">
-            <input
-              [(ngModel)]="selectedWidget.name"
-              matInput
-              name="name"
-              id="name"
-              required
-              placeholder="Enter a name">
-          </mat-input-container>
-          <mat-input-container class="full-width">
-            <input
-              [(ngModel)]="selectedWidget.description"
-              matInput
-              name="description"
-              id="description"
-              required
-              placeholder="Enter a description"
-            >
-          </mat-input-container>
-        </mat-card-content>
-        <mat-card-actions>
-          <button type="submit" [disabled]="!widgetForm.valid" mat-button>Save</button>
-          <button type="button" mat-button (click)="reset()">Cancel</button>
-        </mat-card-actions>
-      </form>
-    </mat-card>
-  </div>
+    <app-widgets-details
+      [widget]="selectedWidget"
+      (saved)="save($event)"
+      (cancelled)="cancel($event)"
+      class="col s6"
+    >
+    </app-widgets-details>
   </div>
 </div>

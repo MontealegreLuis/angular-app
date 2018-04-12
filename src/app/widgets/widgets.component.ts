@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WidgetsService} from './widgets.service';
+import {Widget} from './widget.model';
 
 @Component({
   selector: 'app-widgets',
@@ -8,8 +9,8 @@ import {WidgetsService} from './widgets.service';
   providers: [WidgetsService]
 })
 export class WidgetsComponent implements OnInit {
-  selectedWidget: { id: number; name: string; description: string };
-  widgets: { id: number; name: string; description: string }[];
+  selectedWidget: Widget;
+  widgets: Widget[];
 
   constructor(private widgetsService: WidgetsService) {
   }
@@ -28,8 +29,12 @@ export class WidgetsComponent implements OnInit {
     this.reset();
   }
 
-  selected(widget) {
+  selectWidget(widget) {
     this.selectedWidget = widget;
+  }
+
+  deleteWidget(widget) {
+    console.log('deleting widget', widget);
   }
 
   cancel() {

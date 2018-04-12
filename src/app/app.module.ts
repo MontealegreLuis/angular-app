@@ -9,13 +9,17 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {AppMaterialModule} from './app-material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {WidgetsListComponent} from './widgets/widgets-list/widgets-list.component';
+import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    WidgetsComponent
+    WidgetsComponent,
+    WidgetsListComponent,
+    WidgetsDetailsComponent
   ],
   imports: [
     BrowserModule,
