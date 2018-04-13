@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WidgetsListComponent} from './widgets/widgets-list/widgets-list.component';
 import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details.component';
 import {HttpModule} from '@angular/http';
+import { ItemsSearchComponent } from './items/items-search/items-search.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {HttpModule} from '@angular/http';
     HelloWorldComponent,
     WidgetsComponent,
     WidgetsListComponent,
-    WidgetsDetailsComponent
+    WidgetsDetailsComponent,
+    ItemsSearchComponent
   ],
   imports: [
     BrowserModule,

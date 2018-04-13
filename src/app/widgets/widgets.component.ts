@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WidgetsService} from './widgets.service';
 import {Widget} from './widget.model';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-widgets',
