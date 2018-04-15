@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
-import {ItemsService} from './items/items-search/items.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [ItemsService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Angular application';
+  aStatus = 'Active';
   items;
-
-  constructor(private itemsService: ItemsService) {
-  }
 
   handleResults(items) {
     this.items = items;

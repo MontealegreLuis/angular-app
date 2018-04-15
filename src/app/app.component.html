@@ -2,6 +2,7 @@
 <div>
   <h1>Welcome to {{ title }}!</h1>
   <app-hello-world></app-hello-world>
+  <app-status [currentStatus]="aStatus"></app-status>
   <app-items-search (results)="handleResults($event)" ></app-items-search>
   <pre>{{items|json}}</pre>
   <div class="app-content">

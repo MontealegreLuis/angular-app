@@ -13,6 +13,7 @@ import {WidgetsListComponent} from './widgets/widgets-list/widgets-list.componen
 import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details.component';
 import {HttpModule} from '@angular/http';
 import { ItemsSearchComponent } from './items/items-search/items-search.component';
+import { StatusComponent } from './status/status.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ItemsSearchComponent } from './items/items-search/items-search.componen
     WidgetsComponent,
     WidgetsListComponent,
     WidgetsDetailsComponent,
-    ItemsSearchComponent
+    ItemsSearchComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
