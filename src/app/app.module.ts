@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {HelloWorldComponent} from './hello-world/hello-world.component';
 import {WidgetsComponent} from './widgets/widgets.component';
 import {AppRoutingModule} from './app-routing.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppMaterialModule} from './app-material-module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {WidgetsListComponent} from './widgets/widgets-list/widgets-list.component';
@@ -14,6 +14,7 @@ import {WidgetsDetailsComponent} from './widgets/widgets-details/widgets-details
 import {HttpModule} from '@angular/http';
 import { ItemsSearchComponent } from './items/items-search/items-search.component';
 import { StatusComponent } from './status/status.component';
+import {LoginComponent} from './login/login.component';
 
 
 @NgModule({
@@ -24,11 +25,13 @@ import { StatusComponent } from './status/status.component';
     WidgetsListComponent,
     WidgetsDetailsComponent,
     ItemsSearchComponent,
-    StatusComponent
+    StatusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AppMaterialModule,

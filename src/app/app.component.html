@@ -5,6 +5,7 @@
   <app-status [currentStatus]="aStatus"></app-status>
   <app-items-search (results)="handleResults($event)" ></app-items-search>
   <pre>{{items|json}}</pre>
+  <app-login></app-login>
   <div class="app-content">
     <router-outlet #routerOutlet="outlet"></router-outlet>
   </div>
