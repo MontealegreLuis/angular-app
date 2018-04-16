@@ -15,6 +15,7 @@ import {HttpModule} from '@angular/http';
 import { ItemsSearchComponent } from './items/items-search/items-search.component';
 import { StatusComponent } from './status/status.component';
 import {LoginComponent} from './login/login.component';
+import {NotificationsService} from './notifications/notifications.service';
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import {LoginComponent} from './login/login.component';
     AppMaterialModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    NotificationsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

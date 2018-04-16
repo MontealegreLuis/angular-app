@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WidgetsService} from './widgets.service';
 import {Widget} from './widget.model';
 import 'rxjs/add/operator/map';
+import {NotificationsService} from '../notifications/notifications.service';
 
 @Component({
   selector: 'app-widgets',
@@ -13,7 +14,7 @@ export class WidgetsComponent implements OnInit {
   selectedWidget: Widget;
   widgets: Widget[];
 
-  constructor(private widgetsService: WidgetsService) {
+  constructor(private widgetsService: WidgetsService, private notifications: NotificationsService) {
   }
 
   ngOnInit(): void {
@@ -28,8 +29,10 @@ export class WidgetsComponent implements OnInit {
   save(widget) {
     if (!widget.id) {
       this.createWidget(widget);
+      this.notifications.emit(`Widget: '${widget.name}' was successfully saved!`);
     } else {
       this.updateWidget(widget);
+      this.notifications.emit(`Widget: '${widget.name}' was successfully updated!`);
     }
     this.reset();
   }
@@ -59,6 +62,7 @@ export class WidgetsComponent implements OnInit {
       .subscribe(() => {
         this.loadWidgets();
         this.reset();
+        this.notifications.emit(`Widget: '${widget.name}' was successfully deleted!`);
       });
   }
 
