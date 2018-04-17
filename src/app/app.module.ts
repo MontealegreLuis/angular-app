@@ -16,6 +16,7 @@ import { ItemsSearchComponent } from './items/items-search/items-search.componen
 import { StatusComponent } from './status/status.component';
 import {LoginComponent} from './login/login.component';
 import {NotificationsService} from './notifications/notifications.service';
+import {WidgetComponent} from './widgets/widget/widget.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {NotificationsService} from './notifications/notifications.service';
     WidgetsDetailsComponent,
     ItemsSearchComponent,
     StatusComponent,
-    LoginComponent
+    LoginComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserModule,
