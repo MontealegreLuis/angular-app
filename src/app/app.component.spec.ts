@@ -13,22 +13,19 @@ import {NotificationsService} from './notifications/notifications.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {ItemsService} from './items/items-search/items.service';
+import {HttpModule} from '@angular/http';
 
 class NotificationsServiceStub {
   notifications$ = Observable.of({});
 }
 
 class ItemsServiceStub {
-  constructor() {
-  }
-  search(term: String) {
-  }
 }
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AppMaterialModule, FormsModule, ReactiveFormsModule, RouterTestingModule],
+      imports: [AppMaterialModule, FormsModule, ReactiveFormsModule, RouterTestingModule, HttpModule],
       declarations: [
         AppComponent, HelloWorldComponent, StatusComponent, ItemsSearchComponent, LoginComponent
       ],
@@ -53,6 +50,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Angular application!');
   }));
 });
