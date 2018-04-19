@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemsSearchComponent } from './items-search.component';
+import {AppMaterialModule} from '../../app-material-module';
+import {ItemsService} from './items.service';
+import {HttpModule} from '@angular/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+class ItemsServiceStub {
+}
 
 describe('ItemsSearchComponent', () => {
   let component: ItemsSearchComponent;
@@ -8,7 +15,9 @@ describe('ItemsSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemsSearchComponent ]
+      declarations: [ ItemsSearchComponent ],
+      imports: [AppMaterialModule, HttpModule, BrowserAnimationsModule],
+      providers: [{provide: ItemsService, useClass: ItemsServiceStub}]
     })
     .compileComponents();
   }));
